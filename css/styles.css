@@ -2,7 +2,12 @@
     --bayes-red: #c8102e;
     --bayes-dark: #222222;
     --light-red: #faf4f5;
-    --soft-border: #f1d5da;
+    --soft-red: #f1d5da;
+    --sidebar-bg: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -13,95 +18,61 @@ body {
     line-height: 1.8;
 }
 
-/* Logo Banner */
+.page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 340px 1fr;
+}
 
-.logo-banner {
+/* LEFT PANEL */
+
+.sidebar {
+    background: var(--sidebar-bg);
+    border-right: 1px solid #eeeeee;
+    border-top: 7px solid var(--bayes-red);
+    padding: 35px 28px;
     text-align: center;
-    padding: 30px 0 12px 0;
-    background: #ffffff;
+    position: sticky;
+    top: 0;
+    height: 100vh;
 }
 
 .bayes-logo {
     display: block;
-    width: 320px;
-    max-width: 90%;
+    width: 230px;
+    max-width: 100%;
     height: auto;
-    margin: 0 auto;
-}
-
-/* Navigation */
-
-.topbar {
-    border-top: 4px solid var(--bayes-red);
-    border-bottom: 1px solid #e8e8e8;
-    background: #ffffff;
-}
-
-.nav-links {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    list-style: none;
-    margin: 0;
-    padding: 16px 0;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--bayes-dark);
-    font-weight: bold;
-    font-size: 1rem;
-    letter-spacing: 0.4px;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--bayes-red);
-}
-
-/* Main Layout */
-
-.main-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 45px 40px 80px;
-}
-
-/* Profile */
-
-.profile-section {
-    text-align: center;
-    margin-bottom: 55px;
+    margin: 0 auto 30px;
 }
 
 .profile-photo {
-    width: 220px;
-    height: 220px;
+    width: 210px;
+    height: 210px;
     object-fit: cover;
     border-radius: 50%;
     border: 5px solid var(--bayes-red);
+    margin-bottom: 20px;
 }
 
-.profile-section h1 {
-    margin-top: 22px;
-    margin-bottom: 8px;
-    font-size: 2.5rem;
+.sidebar h1 {
+    font-size: 1.9rem;
+    margin: 10px 0 8px;
     color: var(--bayes-dark);
+    line-height: 1.2;
 }
 
 .title {
+    font-size: 1rem;
     color: #666;
-    font-size: 1.1rem;
-    margin-top: 0;
-    margin-bottom: 24px;
+    margin: 0 0 24px;
+    line-height: 1.6;
 }
-
-/* Contact Icons */
 
 .contact-icons {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 18px;
+    margin-top: 12px;
 }
 
 .contact-icons img {
@@ -112,30 +83,57 @@ body {
 }
 
 .contact-icons img:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
-/* Content */
+/* RIGHT PANEL */
 
-.content-section {
-    max-width: 850px;
-    margin: 0 auto;
+.main-content {
+    padding: 40px 70px 80px;
+    max-width: 980px;
 }
 
-.content-section h2 {
+.nav-top {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 55px;
+}
+
+.nav-top ul {
+    display: flex;
+    gap: 38px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-top a {
+    text-decoration: none;
+    color: var(--bayes-dark);
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 0.4px;
+}
+
+.nav-top a:hover {
     color: var(--bayes-red);
-    font-size: 2rem;
-    margin-bottom: 25px;
-    border-bottom: 2px solid var(--soft-border);
-    padding-bottom: 10px;
 }
 
-.content-section p {
+.home h2 {
+    color: var(--bayes-red);
+    font-size: 2.1rem;
+    margin-bottom: 28px;
+    border-bottom: 2px solid var(--soft-red);
+    padding-bottom: 8px;
+}
+
+.home p {
     text-align: justify;
     margin-bottom: 22px;
+    font-size: 1rem;
 }
 
-/* News */
+/* NEWS */
 
 .news {
     margin-top: 35px;
@@ -144,5 +142,32 @@ body {
     border-left: 5px solid var(--bayes-red);
     border-radius: 6px;
     color: #6d0017;
-    font-size: 1rem;
+}
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+    .page {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: relative;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .main-content {
+        padding: 30px 28px 60px;
+    }
+
+    .nav-top {
+        justify-content: center;
+        margin-bottom: 35px;
+    }
+
+    .nav-top ul {
+        gap: 25px;
+    }
 }
