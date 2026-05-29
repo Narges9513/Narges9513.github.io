@@ -1,23 +1,40 @@
+:root {
+    --bayes-red: #c8102e;
+    --bayes-dark: #222222;
+    --light-red: #faf4f5;
+    --soft-border: #f1d5da;
+}
+
 body {
     margin: 0;
-    font-family: "Inter", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background: #ffffff;
     color: #222;
     line-height: 1.8;
 }
 
-/* Bayes red */
-:root {
-    --bayes-red: #c8102e;
-    --bayes-dark: #1f1f28;
+/* Logo Banner */
+
+.logo-banner {
+    text-align: center;
+    padding: 30px 0 12px 0;
+    background: #ffffff;
 }
 
-/* Top Navigation */
+.bayes-logo {
+    display: block;
+    width: 320px;
+    max-width: 90%;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Navigation */
 
 .topbar {
-    border-top: 6px solid var(--bayes-red);
-    background: white;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--bayes-red);
+    border-bottom: 1px solid #e8e8e8;
+    background: #ffffff;
 }
 
 .nav-links {
@@ -26,14 +43,15 @@ body {
     gap: 50px;
     list-style: none;
     margin: 0;
-    padding: 18px 0;
+    padding: 16px 0;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--bayes-dark);
-    font-weight: 600;
+    font-weight: bold;
     font-size: 1rem;
+    letter-spacing: 0.4px;
     transition: 0.3s;
 }
 
@@ -41,47 +59,44 @@ body {
     color: var(--bayes-red);
 }
 
-/* Main Page */
+/* Main Layout */
 
 .main-container {
     max-width: 900px;
-    margin: auto;
-    padding: 50px 40px 80px;
+    margin: 0 auto;
+    padding: 45px 40px 80px;
 }
 
 /* Profile */
 
 .profile-section {
     text-align: center;
-    margin-bottom: 60px;
-}
-
-.bayes-logo {
-    width: 260px;
-    height: auto;
-    margin-bottom: 25px;
+    margin-bottom: 55px;
 }
 
 .profile-photo {
-    width: 240px;
-    height: 240px;
-    border-radius: 50%;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
+    border-radius: 50%;
     border: 5px solid var(--bayes-red);
 }
 
 .profile-section h1 {
-    margin-top: 25px;
-    margin-bottom: 10px;
+    margin-top: 22px;
+    margin-bottom: 8px;
     font-size: 2.5rem;
     color: var(--bayes-dark);
 }
 
 .title {
-    font-size: 1.1rem;
     color: #666;
-    margin-bottom: 25px;
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 24px;
 }
+
+/* Contact Icons */
 
 .contact-icons {
     display: flex;
@@ -90,7 +105,9 @@ body {
 }
 
 .contact-icons img {
-    width: 36px;
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
     transition: 0.3s;
 }
 
@@ -102,14 +119,14 @@ body {
 
 .content-section {
     max-width: 850px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .content-section h2 {
     color: var(--bayes-red);
     font-size: 2rem;
     margin-bottom: 25px;
-    border-bottom: 2px solid #f1d5da;
+    border-bottom: 2px solid var(--soft-border);
     padding-bottom: 10px;
 }
 
@@ -122,9 +139,10 @@ body {
 
 .news {
     margin-top: 35px;
-    padding: 20px;
-    background: #faf4f5;
+    padding: 18px 20px;
+    background: var(--light-red);
     border-left: 5px solid var(--bayes-red);
     border-radius: 6px;
     color: #6d0017;
+    font-size: 1rem;
 }
